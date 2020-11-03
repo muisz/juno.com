@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Juno.com</title>
+        <link rel="stylesheet" href="./library/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="./library/fontawesome/css/all.css"/>
+        <link rel="stylesheet" href="./css/index.css"/>
+    </head>
+    <body>
+        <headers>
+            <div class="header-container row">
+                <div class="col">
+                    <a href="index.html" style="color: white"><h3>Juno.com</h3></a>
+                </div>
+                <div class="col-6">
+                    <div class="form-inline">
+                        <form style="width: 100%;">
+                            <input type="search" style="width: 100%;" name="q" class="form-control" placeholder="search.."/>
+                        </form>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tools-container">
+                        <ul class="tools">    
+                            <li class="tools-item"><a href="#"><i class="fa fa-cart-arrow-down fa-2x"></i></a></li>
+                            <li class="tools-item"><a href="#"><i class="fa fa-user fa-2x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </headers>
+
+        <main>
+            <div class="detail-container">
+                <div class="detail-1">
+                    <div class="detail-images">
+                        <img src="./img/iphone.png" />
+                    </div>
+                    <div class="item-spec">
+                        <h5 style="color: #007bff">Iphone</h5>
+                        <div class="badge badge-danger">bestseller</div>
+                        <div style="margin-top: 0.5em">Rp. 14.999.00</div>
+                        <div style="margin-top: 0.5em">
+                            <h6 style="">Quantity:</h6>
+                            <span>
+                                <button type="button" class="btn btn-primary btn-sm" id="sub-quantity"><i class="fa fa-minus"></i></button>
+                            </span>
+                            <span style="margin-left: 5px; margin-right: 5px" id="quantity">1</span>
+                            <span>
+                                <button type="button" class="btn btn-primary btn-sm" id="add-quantity"><i class="fa fa-plus"></i></button>
+                            </span>
+                            <script type="text/javascript">
+                                var quantityCounter = 1;
+                                var quantity = document.getElementById('quantity');
+                                var subQuantity = document.getElementById('sub-quantity');
+                                var addQuantity = document.getElementById('add-quantity');
+
+                                function updateQuantity(){
+                                    quantity.innerHTML = quantityCounter;
+                                    if(quantityCounter == 1){
+                                        subQuantity.setAttribute('disabled', true)
+                                    } else {
+                                        subQuantity.removeAttribute('disabled')
+                                    }
+                                }
+
+                                if(quantityCounter == 1){
+                                    subQuantity.setAttribute('disabled', true)
+                                }
+
+                                subQuantity.onclick = (e) => {
+                                    quantityCounter--;
+                                    updateQuantity();
+                                }
+
+                                addQuantity.onclick = (e) => {
+                                    quantityCounter++;
+                                    updateQuantity();
+                                }
+
+                            </script>
+                        </div>
+                        <div style="margin-top: 2em">
+                            <button type="button" class="btn btn-primary">buy now</button>
+                            <button type="button" class="btn btn-success"><i class="fa fa-cart-plus"></i> add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 15px">
+                    <div class="divider"></div>
+                </div>
+                <div class="detail-2">
+                    <div class="">
+                        <span><h6 style="">Rating:</h6></span>
+                        <div style="color: #007bff"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i></div>
+                    </div>
+                    <div class="" style="margin-top: 1.5em">
+                        <h6 style="">Description:</h6>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script type="text/javascript" src="./library/jquery.js"></script>
+        <script type="text/javascript" src="./library/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="./library/fontawesome/js/all.js"></script>
+    </body>
+</html>
